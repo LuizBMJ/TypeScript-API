@@ -16,7 +16,11 @@
         "ignoreDeprecations": "6.0",
         "paths": {
             "#settings/*": ["./settings/*"],
-            "#functions/*": ["./functions/*"]
+            "#functions/*": ["./functions/*"],
+            "#services/*": ["./services/*"],
+            "#controllers/*": ["./controllers/tasks/*"],
+            "#schemas/*": ["./database/schemas/*"],
+            "#database*": ["./database/index.js"]
         }
     },
     "include": ["src"],
