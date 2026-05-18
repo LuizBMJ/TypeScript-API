@@ -1,4 +1,4 @@
-import { tasksService } from "#services/tasks.js";
+import { tasksService } from "../../services/tasks.js";
 import { FastifyReply, FastifyRequest } from "fastify";
 import { StatusCodes } from "http-status-codes";
 import { notFoundTask } from "./helpers.js";

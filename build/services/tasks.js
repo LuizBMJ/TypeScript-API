@@ -1,39 +1,31 @@
 import { db } from "../database/index.js";
-import { CreateTaskSchema, TaskStatus, UpdateTaskSchema } from "../database/schemas/tasks.js";
-
-async function exists(id: string) {
+async function exists(id) {
     return await db.tasks.has(id);
 }
-
-async function getTaskById(id: string){
+async function getTaskById(id) {
     return await db.tasks.get(id);
 }
-
-async function getAllTasks(){
-    const data = await db.tasks.all()
-    return data.map(({ value}) => value);
+async function getAllTasks() {
+    const data = await db.tasks.all();
+    return data.map(({ value }) => value);
 }
-
-async function createTasks(data: CreateTaskSchema) {
+async function createTasks(data) {
     const createdAt = new Date();
     const id = createdAt.getTime().toString();
-    const status: TaskStatus = "pending";
+    const status = "pending";
     return await db.tasks.set(id, {
         ...data, id, status, createdAt
     });
 }
-
-async function updateTasks(id: string, data: UpdateTaskSchema){
+async function updateTasks(id, data) {
     const task = await getTaskById(id);
     return await db.tasks.set(id, {
         ...task, ...data
     });
 }
-
-async function deleteTasks(id: string){
+async function deleteTasks(id) {
     return await db.tasks.delete(id);
 }
-
 export const tasksService = {
     exists,
     getById: getTaskById,
@@ -41,4 +33,4 @@ export const tasksService = {
     create: createTasks,
     update: updateTasks,
     delete: deleteTasks,
-}
+};

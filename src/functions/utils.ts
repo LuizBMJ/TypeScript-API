@@ -1,4 +1,4 @@
-import { DefineRoutesHandler } from "#settings/types.js";
+import { DefineRoutesHandler } from "../settings/types.js";
 import { FastifyInstance } from "fastify";
 
 export function defineRoutes(handler: DefineRoutesHandler){

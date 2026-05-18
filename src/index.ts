@@ -4,8 +4,8 @@ import autoload from "@fastify/autoload";
 import path from "node:path";
 import log from "consola";
 import ck from "chalk";
-import "#settings/env.js";
-import { errorHandler } from "#functions/error.js";
+import "./settings/env.js";
+import { errorHandler } from "./functions/error.js";
 
 
 const app = fastify()

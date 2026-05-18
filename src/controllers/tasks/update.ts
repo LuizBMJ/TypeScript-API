@@ -1,5 +1,5 @@
-import { taskStatus, UpdateTaskSchema } from "#schemas/tasks.js";
-import { tasksService } from "#services/tasks.js";
+import { taskStatus, UpdateTaskSchema } from "../../database/schemas/tasks.js";
+import { tasksService } from "../../services/tasks.js";
 import { FastifyReply, FastifyRequest } from "fastify";
 import { exit } from "node:process";
 import { z } from "zod";
