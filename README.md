@@ -1,104 +1,94 @@
-# TypeScript-API
+# TypeScript Task API
 
-API REST para gerenciamento de tarefas (CRUD completo) construída com TypeScript, Fastify e SQLite.
+> REST API for task management built with TypeScript, Fastify, and SQLite
 
-## Stack
+![Badge](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square\&logo=typescript\&logoColor=white)
+![Badge](https://img.shields.io/badge/Fastify-000000?style=flat-square\&logo=fastify\&logoColor=white)
+![Badge](https://img.shields.io/badge/SQLite-003B57?style=flat-square\&logo=sqlite\&logoColor=white)
+![Badge](https://img.shields.io/badge/Zod-3068B7?style=flat-square\&logo=zod\&logoColor=white)
+![Badge](https://img.shields.io/badge/Node.js-339933?style=flat-square\&logo=node.js\&logoColor=white)
+![Badge](https://img.shields.io/badge/License-MIT-yellow?style=flat-square\&logo=open-source-initiative\&logoColor=white)
 
-- **TypeScript** — Linguagem principal
-- **Fastify** — Framework web
-- **SQLite (quick.db)** — Banco de dados
-- **Zod** — Validação de dados
-- **Consola** — Sistema de logs
+---
 
-## Pré-requisitos
+## 📌 Overview
 
-- Node.js 18+
+This project is a REST API for task management built with TypeScript, Fastify, and SQLite.
+The API provides full CRUD functionality for creating, listing, updating, and deleting tasks, with schema validation powered by Zod and logging handled by Consola.
+It was designed as a backend study project focused on modern TypeScript development, REST architecture, and lightweight database integration.
 
-## Instalação
+## 🛠️ Technologies
 
-```bash
+* **TypeScript** — Main programming language used in the API
+* **Fastify** — High-performance web framework for Node.js
+* **SQLite (quick.db)** — Lightweight database used for data persistence
+* **Zod** — Schema validation and type-safe request handling
+* **Consola** — Structured logging system
+* **Node.js** — Runtime environment for the application
+
+## 📁 Project Structure
+
+```bash id="m7k2fa"
+.
+├── src/                     # Application source code
+│   ├── routes/              # API route definitions
+│   ├── database/            # Database configuration and access
+│   ├── schemas/             # Zod validation schemas
+│   ├── utils/               # Utility functions and helpers
+│   └── server.ts            # Main server entry point
+│
+├── build/                   # Compiled JavaScript output
+├── .env                     # Environment variables
+├── package.json             # Project dependencies and scripts
+├── tsconfig.json            # TypeScript configuration
+├── README.md                # Project documentation
+└── LICENSE                  # Project license
+```
+
+## 🚀 Getting Started
+
+Clone the repository:
+
+```bash id="p4z9tw"
+git clone https://github.com/LuizBMJ/typescript-task-api.git
+```
+
+Navigate to the project folder:
+
+```bash id="x8m1ql"
+cd typescript-task-api
+```
+
+Install the dependencies:
+
+```bash id="f5k7ya"
 npm install
 ```
 
-## Scripts
+Create a `.env` file in the project root:
 
-| Comando | Descrição |
-|---------|-----------|
-| `npm run dev` | Inicia o servidor em modo desenvolvimento |
-| `npm run build` | Compila o TypeScript |
-| `npm run start` | Inicia o servidor compilado |
-| `npm run watch` | Reinicia automaticamente em alterações |
-
-## Variáveis de Ambiente
-
-Crie um arquivo `.env` na raiz do projeto:
-
-```env
+```env id="t2v8np"
 PORT=3000
 ```
 
-## Endpoints
+Run the development server:
 
-### Listar todas as tarefas
-```
-GET /tasks
-```
-
-Retorna um array com todas as tarefas.
-
-### Buscar tarefa por ID
-```
-GET /tasks/:id
+```bash id="d6q4re"
+npm run dev
 ```
 
-Retorna os dados da tarefa especificada.
+Build the TypeScript project:
 
-### Criar tarefa
-```
-POST /tasks
-```
-
-**Body:**
-```json
-{
-    "name": "Nome da tarefa"
-}
+```bash id="g1m9vc"
+npm run build
 ```
 
-**Resposta:**
-```json
-{
-    "id": "uuid",
-    "name": "Nome da tarefa",
-    "status": "pending",
-    "createdAt": "2025-01-01T00:00:00.000Z"
-}
+Start the compiled application:
+
+```bash id="s3x8lu"
+npm run start
 ```
 
-### Atualizar tarefa
-```
-PATCH /tasks/:id
-```
+## 📄 License
 
-**Body (parcial):**
-```json
-{
-    "name": "Novo nome",
-    "status": "progress"
-}
-```
-
-### Deletar tarefa
-```
-DELETE /tasks/:id
-```
-
-## Status das Tarefas
-
-- `pending` — Pendente
-- `progress` — Em progresso
-- `completed` — Concluída
-
-## Licença
-
-[![Licença MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
